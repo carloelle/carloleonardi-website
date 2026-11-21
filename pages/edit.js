@@ -44,9 +44,6 @@ const Edit = () => {
           id: uuidv4(),
           title: "New Project",
           description: "Web Design & Development",
-          imageSrc:
-            "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
-
           url: "http://chetanverma.com/",
         },
       ],
@@ -382,22 +379,6 @@ const Edit = () => {
                         editProjects(index, {
                           ...project,
                           description: e.target.value,
-                        })
-                      }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
-                      type="text"
-                    ></input>
-                  </div>
-                  <div className="flex items-center mt-2">
-                    <label className="w-1/5 text-lg opacity-50">
-                      Image Source
-                    </label>
-                    <input
-                      value={project.imageSrc}
-                      onChange={(e) =>
-                        editProjects(index, {
-                          ...project,
-                          imageSrc: e.target.value,
                         })
                       }
                       className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
