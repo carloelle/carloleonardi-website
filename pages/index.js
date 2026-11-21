@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
-import WorkCard from "../components/WorkCard";
+import PaperItem from "../components/PaperItem";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
@@ -98,19 +98,19 @@ export default function Home() {
           <Socials className="mt-2 laptop:mt-5" />
         </div>
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">Research.</h1>
+          <h1 className="text-2xl text-bold">Papers.</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
+          <ul className="mt-5 laptop:mt-10 flex flex-col gap-2 laptop:w-4/5">
             {data.projects.map((project) => (
-              <WorkCard
-                key={project.id}
-                img={project.imageSrc}
-                name={project.title}
-                description={project.description}
-                onClick={() => window.open(project.url)}
-              />
+              <li key={project.id}>
+                <PaperItem
+                  title={project.title}
+                  description={project.description}
+                  url={project.url}
+                />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">

@@ -19,28 +19,24 @@
       "id": "1",
       "title": "Tripso",
       "description": "Self-supervised transformer for gene programme embeddings · co-first author",
-      "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
       "url": "https://www.biorxiv.org/content/10.64898/2026.03.24.713961v1"
     },
     {
       "id": "2",
       "title": "MintFlow",
       "description": "Generative model disentangling intrinsic from microenvironment-induced gene expression in spatial transcriptomics · co-first author",
-      "imageSrc": "https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
       "url": "https://www.biorxiv.org/content/10.1101/2025.06.24.661094v3"
     },
     {
       "id": "3",
       "title": "TERRA",
       "description": "Spatial foundation model to understand tissue organisation · I led the cross-organ macrophage archetype analysis",
-      "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
       "url": "https://www.biorxiv.org/content/10.64898/2026.07.29.741565v1"
     },
     {
       "id": "4",
       "title": "IL-1β+ macrophages in pancreatic cancer",
       "description": "Caronni et al., Nature 2023 · principal bioinformatician (single-cell, spatial and bulk)",
-      "imageSrc": "https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
       "url": "https://www.nature.com/articles/s41586-023-06685-2"
     }
   ],
@@ -94,5 +90,27 @@
     "languages": ["Python", "R", "Bash"],
     "frameworks": ["PyTorch", "Scanpy", "AnnData"],
     "others": ["Xenium", "HPC (LSF)", "Git"]
+  },
+  "collaborate": {
+    "title": "Let's work together",
+    "intro": "I'm always happy to hear from people interested in tumour immunology, spatial biology and machine learning, whether you're a clinician with a question, a fellow researcher or a student.",
+    "sections": [
+      {
+        "heading": "Research interests",
+        "body": "Tumour immunology and the tumour microenvironment, especially how spatial organisation and myeloid–lymphoid crosstalk shape immunotherapy response. Oncology across cancer types, including renal and pancreatic cancer. Macrophage biology across tissues. Machine learning methods for single-cell and spatial omics."
+      },
+      {
+        "heading": "Collaborations",
+        "body": "I'm keen to collaborate with clinicians and experimental groups who have well-annotated tissue cohorts or clinical questions that spatial and single-cell data could answer, and with method developers interested in biological applications."
+      },
+      {
+        "heading": "Students",
+        "body": "I host Master's and undergraduate students for research projects at the intersection of machine learning and biology. If you're interested, email me with a short note about your background and what you'd like to work on."
+      },
+      {
+        "heading": "Get in touch",
+        "body": "Email is the best way to reach me. You can also find my publications on Google Scholar and my code on GitHub."
+      }
+    ]
   }
 }
