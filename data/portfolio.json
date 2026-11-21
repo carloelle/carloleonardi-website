@@ -1,1 +1,98 @@
-{"name":"Chetan","headerTaglineOne":"Hello 👋","headerTaglineTwo":"I'm Chetan Verma - curious","headerTaglineThree":"designer and devloper","headerTaglineFour":" based in New Delhi, India.","showCursor":true,"showBlog":true,"darkMode":true,"showResume":true,"socials":[{"id":"1","title":"Github","link":"https://github.com/chetanverma16"},{"id":"2","title":"LinkedIn","link":"https://www.linkedin.com/in/chetanverma7/"},{"id":"3","title":"Twitter","link":"https://twitter.com/realchetanverma"},{"id":"4","title":"Blog","link":"https://blog.chetanverma.com/"},{"id":"5","title":"Email","link":"mailto:hello@chetanverma.com"}],"projects":[{"id":"1","title":"Project One Test","description":"Web Design","imageSrc":"https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"2","title":"Project Two","description":"Web Development","imageSrc":"https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"3","title":"Project Three","description":"Design","imageSrc":"https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"4","title":"Project Four","description":"Marketing","imageSrc":"https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"5","title":"Project Five","description":"Development","imageSrc":"https://images.unsplash.com/photo-1534239143101-1b1c627395c5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzZ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"},{"id":"6","title":"Project Six","description":"Design & Development","imageSrc":"https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60","url":"http://chetanverma.com/"}],"services":[{"id":"1","title":"Art Direction","description":"We help with the creation and development of online advertising ideas, with particular focus on their visual appearance."},{"id":"2","title":"Branding","description":"We design key brand elements such as the logo, color scheme, typography, and other design components that makes your brand stand out from competitors."},{"id":"3","title":"Web Design","description":"We build and optimize your online presence.  Website is the digital entry point into your business and a powerful revenue channel."},{"id":"4","title":"3D Design","description":"We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."}],"aboutpara":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.","resume":{"tagline":"👋  I'm a software engineer, product designer.","description":"I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.","experiences":[{"id":"1","dates":"March 2022 - Present","type":"Full Time","position":"Frontend Engineer at X","bullets":"Bullet One, Bullet Two"},{"id":"d495c23b-4f65-479a-9b8a-cfbc1c089725","dates":"July 2020 - March 2022","type":"Full Time","position":"Frontend Engineer at X","bullets":"Worked on the frontend of a React application, Worked on the frontend of a React application"}],"education":{"universityName":"University X","universityDate":"2016-2020","universityPara":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"},"languages":["Javascript","HTML5","CSS","Python","Go"],"frameworks":["React","Typescript","NodeJs"],"others":["Figma","AdobeXD","AWS"]}}
+{
+  "name": "Carlo Leonardi",
+  "headerTaglineOne": "Hi, I'm Carlo 👋",
+  "headerTaglineTwo": "Computational biologist working on",
+  "headerTaglineThree": "machine learning, spatial omics",
+  "headerTaglineFour": "and tumour immunology in Cambridge, UK.",
+  "showCursor": true,
+  "showBlog": false,
+  "darkMode": true,
+  "showResume": true,
+  "socials": [
+    { "id": "1", "title": "Google Scholar", "link": "https://scholar.google.com/citations?user=K723OxUAAAAJ&hl=en&oi=ao" },
+    { "id": "2", "title": "GitHub", "link": "https://github.com/carloelle" },
+    { "id": "3", "title": "LinkedIn", "link": "https://www.linkedin.com/in/cleonardi95/" },
+    { "id": "4", "title": "Email", "link": "mailto:c.leonardi95@protonmail.com" }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Tripso",
+      "description": "Self-supervised transformer for gene programme embeddings · co-first author",
+      "imageSrc": "https://images.unsplash.com/photo-1487837647815-bbc1f30cd0d2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Njl8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.03.24.713961v1"
+    },
+    {
+      "id": "2",
+      "title": "MintFlow",
+      "description": "Generative model disentangling intrinsic from microenvironment-induced gene expression in spatial transcriptomics · co-first author",
+      "imageSrc": "https://images.unsplash.com/photo-1605153864431-a2795a1b2f95?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwyNTY3ODl8fGVufDB8fHw%3D&auto=format&fit=crop&w=400&q=60",
+      "url": "https://www.biorxiv.org/content/10.1101/2025.06.24.661094v3"
+    },
+    {
+      "id": "3",
+      "title": "TERRA",
+      "description": "Spatial foundation model to understand tissue organisation · I led the cross-organ macrophage archetype analysis",
+      "imageSrc": "https://images.unsplash.com/photo-1504083898675-c896ecdae86e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+      "url": "https://www.biorxiv.org/content/10.64898/2026.07.29.741565v1"
+    },
+    {
+      "id": "4",
+      "title": "IL-1β+ macrophages in pancreatic cancer",
+      "description": "Caronni et al., Nature 2023 · principal bioinformatician (single-cell, spatial and bulk)",
+      "imageSrc": "https://images.unsplash.com/photo-1492171983775-a51717616c0d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjB8fHBhc3RlbHxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=400&q=60",
+      "url": "https://www.nature.com/articles/s41586-023-06685-2"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "Spatial and single-cell omics",
+      "description": "Mapping how cells are organised in tissue, and how that organisation shapes their state, using imaging-based and sequencing-based spatial transcriptomics."
+    },
+    {
+      "id": "2",
+      "title": "Machine learning for biology",
+      "description": "Building self-supervised, generative and foundation models that turn large-scale sequencing data into interpretable biology."
+    },
+    {
+      "id": "3",
+      "title": "Tumour immunology",
+      "description": "Understanding how spatial organisation and myeloid–lymphoid crosstalk determine immunotherapy response in clear cell renal cell carcinoma and other cancers."
+    },
+    {
+      "id": "4",
+      "title": "Macrophages across tissues",
+      "description": "Learning shared and tissue-specific macrophage programmes across organs, in cancer and in inflammatory disease."
+    }
+  ],
+  "aboutpara": "I'm a postdoctoral researcher in Mo Lotfollahi's group at the Wellcome Sanger Institute. I work where machine learning meets single-cell and spatial genomics, developing methods to understand how tissue context shapes cell states, with a focus on the tumour microenvironment in clear cell renal cell carcinoma and pancreatic cancer. I trained in biotechnology at the University of Pavia and in systems biology at ETH Zurich, and did my PhD at the University of Turin, working on tumour-associated macrophages in pancreatic cancer.",
+  "resume": {
+    "tagline": "👋 Computational biologist at the interface of machine learning and spatial genomics.",
+    "description": "I develop and apply machine learning methods to single-cell and spatial transcriptomics data, with a particular interest in macrophages, the tumour microenvironment and immunotherapy response.",
+    "experiences": [
+      {
+        "id": "1",
+        "dates": "October 2025 – Present",
+        "type": "Full Time",
+        "position": "Postdoctoral Researcher, Wellcome Sanger Institute (Lotfollahi lab)",
+        "bullets": "ML methods for cellular identity and state in large-scale sequencing data (Open Targets Drug2Cell project), Spatial analysis of the tumour microenvironment in clear cell renal cell carcinoma, Undergraduate supervisor in IA Mathematical Biology at the University of Cambridge"
+      },
+      {
+        "id": "2",
+        "dates": "January 2025 – September 2025",
+        "type": "Full Time",
+        "position": "Research Fellow in Bioinformatics and AI, Centro Cardiologico Monzino (Milan)",
+        "bullets": "Bioinformatics and AI research"
+      }
+    ],
+    "education": {
+      "universityName": "PhD, University of Turin (Complex Systems for Quantitative Biomedicine)",
+      "universityDate": "Awarded December 2025",
+      "universityPara": "Doctoral research on tumour-associated macrophages in Renato Ostuni's lab (SR-TIGET, Milan) and Claudio Isella's lab (Candiolo Cancer Institute, Turin). Previously: MSc in Biology, major in Systems Biology (ETH Zurich) and BSc in Biotechnology (University of Pavia)."
+    },
+    "languages": ["Python", "R", "Bash"],
+    "frameworks": ["PyTorch", "Scanpy", "AnnData"],
+    "others": ["Xenium", "HPC (LSF)", "Git"]
+  }
+}
