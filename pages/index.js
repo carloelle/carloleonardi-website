@@ -137,7 +137,7 @@ export default function Home() {
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
         />
-        <div className="laptop:mt-20 mt-10 flex flex-col laptop:flex-row laptop:items-center gap-6 laptop:gap-10">
+        <div className="laptop:mt-10 mt-6 flex flex-col laptop:flex-row laptop:items-center gap-4 laptop:gap-8">
           <div className="w-full laptop:w-3/5">
             <div className="mt-5">
               <h1
@@ -169,26 +169,44 @@ export default function Home() {
             <Socials className="mt-2 laptop:mt-5" />
           </div>
 
-          <div className="order-first laptop:order-last w-full laptop:w-2/5 flex justify-center laptop:justify-end">
+          <div className="order-first laptop:order-last w-full laptop:w-2/5 flex justify-center">
             <div
-              className={`transition-all duration-1000 ease-out ${
+              className={`relative w-64 tablet:w-80 laptop:w-full transition-all duration-1000 ease-out ${
                 photoVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
+              style={{ isolation: "isolate" }}
             >
+              {/* Soft colour glow behind the photo */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0"
+                style={{
+                  zIndex: -1,
+                  background:
+                    "radial-gradient(circle at 50% 40%, rgba(96,165,250,0.45) 0%, rgba(244,114,182,0.30) 40%, transparent 70%)",
+                  filter: "blur(30px)",
+                }}
+              />
               <img
                 ref={photoRef}
                 src="/images/carlo-photo.png"
                 alt="Carlo Leonardi"
-                className="w-48 tablet:w-64 laptop:w-full max-w-md h-auto"
-                style={{ willChange: "transform, opacity" }}
+                className="w-full h-auto"
+                style={{
+                  willChange: "transform, opacity",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, black 70%, transparent 100%)",
+                  maskImage:
+                    "linear-gradient(to bottom, black 70%, transparent 100%)",
+                }}
               />
             </div>
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
+        <div className="mt-6 laptop:mt-16 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
             {renderHighlighted(data.aboutpara)}
