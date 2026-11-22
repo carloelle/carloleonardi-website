@@ -20,32 +20,90 @@ const paperGroups = [
   { key: "biology", label: "Biology", color: "#22c55e" },
 ];
 
-// Render **keywords** as blue text and [text](url) as blue links
+// Rotating role in the About section ("a postdoctoral researcher", "a biologist", ...)
+function RotatingRole({ roles = [] }) {
+  const [index, setIndex] = useState(0);
+  const [phase, setPhase] = useState("in"); // in | out | enter
+
+  useEffect(() => {
+    if (roles.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let swapTimer;
+    let enterTimer;
+    const interval = setInterval(() => {
+      setPhase("out");
+      swapTimer = setTimeout(() => {
+        setIndex((i) => (i + 1) % roles.length);
+        setPhase("enter");
+        enterTimer = setTimeout(() => setPhase("in"), 30);
+      }, 400);
+    }, 2800);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(swapTimer);
+      clearTimeout(enterTimer);
+    };
+  }, [roles.length]);
+
+  const phaseStyles = {
+    in: { opacity: 1, transform: "translateY(0)" },
+    out: { opacity: 0, transform: "translateY(-0.4em)" },
+    enter: { opacity: 0, transform: "translateY(0.4em)" },
+  };
+
+  return (
+    <>
+      <span className="sr-only">{roles[0]}</span>
+      <span
+        aria-hidden="true"
+        className="inline-block whitespace-nowrap text-blue-500 dark:text-blue-400"
+        style={{
+          ...phaseStyles[phase],
+          transition:
+            phase === "enter"
+              ? "none"
+              : "opacity 0.4s ease, transform 0.4s ease",
+        }}
+      >
+        {roles[index]}
+      </span>
+    </>
+  );
+}
+
+// Render **keywords** as blue text, [text](url) as blue links and {{role}} as the rotating role
 const renderHighlighted = (text = "") =>
-  text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
-    if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
-      return (
-        <span key={i} className="text-blue-500 dark:text-blue-400">
-          {part.slice(2, -2)}
-        </span>
-      );
-    }
-    const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    if (link) {
-      return (
-        <a
-          key={i}
-          href={link[2]}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 dark:text-blue-400 underline underline-offset-4 hover:opacity-70 transition-opacity"
-        >
-          {link[1]}
-        </a>
-      );
-    }
-    return part;
-  });
+  text
+    .split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\)|\{\{role\}\})/g)
+    .map((part, i) => {
+      if (part === "{{role}}") {
+        return <RotatingRole key={i} roles={data.aboutRoles} />;
+      }
+      if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+        return (
+          <span key={i} className="text-blue-500 dark:text-blue-400">
+            {part.slice(2, -2)}
+          </span>
+        );
+      }
+      const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      if (link) {
+        return (
+          <a
+            key={i}
+            href={link[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 dark:text-blue-400 underline underline-offset-4 hover:opacity-70 transition-opacity"
+          >
+            {link[1]}
+          </a>
+        );
+      }
+      return part;
+    });
 
 export default function Home() {
   // Ref
@@ -202,7 +260,10 @@ export default function Home() {
 
         <div className="mt-6 laptop:mt-16 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
+          <p className="tablet:mx-10 mt-2 text-2xl laptop:text-4xl text-bold w-full laptop:w-3/5">
+            {renderHighlighted(data.aboutLead)}
+          </p>
+          <p className="tablet:mx-10 tablet:mb-10 mt-4 text-xl laptop:text-3xl w-full laptop:w-3/5">
             {renderHighlighted(data.aboutpara)}
           </p>
         </div>
