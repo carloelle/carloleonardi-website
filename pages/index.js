@@ -14,6 +14,12 @@ import Cursor from "../components/Cursor";
 // Local Data
 import data from "../data/portfolio.json";
 
+// Paper groups: "category" in portfolio.json decides where each paper goes
+const paperGroups = [
+  { key: "methods", label: "Methods", color: "#f97316" },
+  { key: "biology", label: "Biology", color: "#22c55e" },
+];
+
 // Render **keywords** as blue text and [text](url) as blue links
 const renderHighlighted = (text = "") =>
   text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
@@ -224,17 +230,42 @@ export default function Home() {
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-2xl text-bold">Papers.</h1>
 
-          <ul className="mt-5 laptop:mt-10 flex flex-col gap-2 laptop:w-4/5">
-            {data.projects.map((project) => (
-              <li key={project.id}>
-                <PaperItem
-                  title={project.title}
-                  description={project.description}
-                  url={project.url}
-                />
-              </li>
-            ))}
-          </ul>
+          {paperGroups.map((group) => {
+            const papers = data.projects.filter(
+              (project) => project.category === group.key
+            );
+            if (papers.length === 0) return null;
+            return (
+              <div key={group.key} className="mt-8 laptop:mt-12">
+                <h2
+                  className="text-xl laptop:text-2xl text-bold flex items-center gap-3"
+                  style={{ color: group.color }}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="inline-block w-3 h-3 rounded-full"
+                    style={{ backgroundColor: group.color }}
+                  />
+                  {group.label}
+                </h2>
+                <ul className="mt-3 flex flex-col gap-2 laptop:w-4/5">
+                  {papers.map((project) => (
+                    <li
+                      key={project.id}
+                      className="border-l-4 pl-2"
+                      style={{ borderColor: group.color }}
+                    >
+                      <PaperItem
+                        title={project.title}
+                        description={project.description}
+                        url={project.url}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
         {/* This button should not go into production */}
         {process.env.NODE_ENV === "development" && (
