@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -49,6 +49,46 @@ export default function Home() {
   const textTwo = useRef();
   const textThree = useRef();
   const textFour = useRef();
+  const photoRef = useRef();
+
+  // Photo: fade in on load, fade out while scrolling down
+  const [photoVisible, setPhotoVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setPhotoVisible(true), 300);
+
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (reduceMotion) return () => clearTimeout(timer);
+
+    let ticking = false;
+    const update = () => {
+      const el = photoRef.current;
+      if (el) {
+        const y = window.scrollY;
+        const fade = Math.max(0, 1 - y / 450);
+        el.style.opacity = fade;
+        el.style.transform = `translateY(${-y * 0.2}px) scale(${
+          0.9 + 0.1 * fade
+        })`;
+      }
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -76,7 +116,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`relative ${data.showCursor && "cursor-none"}`}>
+    <div
+      className={`relative ${data.showCursor && "cursor-none"}`}
+      style={{ overflowX: "clip" }}
+    >
       {data.showCursor && <Cursor />}
       <Head>
         <title>{data.name}</title>
@@ -127,11 +170,21 @@ export default function Home() {
           </div>
 
           <div className="order-first laptop:order-last w-full laptop:w-2/5 flex justify-center laptop:justify-end">
-            <img
-              src="/images/carlo-photo.png"
-              alt="Carlo Leonardi"
-              className="w-48 tablet:w-64 laptop:w-full max-w-md h-auto"
-            />
+            <div
+              className={`transition-all duration-1000 ease-out ${
+                photoVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+            >
+              <img
+                ref={photoRef}
+                src="/images/carlo-photo.png"
+                alt="Carlo Leonardi"
+                className="w-48 tablet:w-64 laptop:w-full max-w-md h-auto"
+                style={{ willChange: "transform, opacity" }}
+              />
+            </div>
           </div>
         </div>
 
