@@ -1,6 +1,8 @@
 # carloleonardi.co.uk
 
-Personal academic website of **Carlo Leonardi**, postdoctoral researcher at the Wellcome Sanger Institute, working on machine learning for single-cell and spatial genomics, the tumour microenvironment and tumour immunology.
+Personal academic website of **Carlo Leonardi**, postdoctoral researcher at the Wellcome Sanger Institute, working on machine learning for single-cell and spatial genomics, immuno-oncology and large-scale omics. 
+
+All views, posts or posts are mine.
 
 🌐 **Live:** https://carloleonardi.co.uk
 
