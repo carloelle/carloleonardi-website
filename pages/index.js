@@ -137,8 +137,8 @@ export default function Home() {
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
         />
-        <div className="laptop:mt-10 mt-6 flex flex-col laptop:flex-row laptop:items-center gap-4 laptop:gap-8">
-          <div className="w-full laptop:w-3/5">
+        <div className="laptop:mt-10 mt-6 flex flex-col laptop:flex-row laptop:items-center gap-4 laptop:gap-6">
+          <div className="w-full laptop:w-7/12">
             <div className="mt-5">
               <h1
                 ref={textOne}
@@ -169,26 +169,14 @@ export default function Home() {
             <Socials className="mt-2 laptop:mt-5" />
           </div>
 
-          <div className="order-first laptop:order-last w-full laptop:w-2/5 flex justify-center">
+          <div className="order-first laptop:order-last w-full laptop:w-5/12 flex justify-center">
             <div
-              className={`relative w-64 tablet:w-80 laptop:w-full transition-all duration-1000 ease-out ${
+              className={`w-72 tablet:w-96 laptop:w-full laptop:scale-110 origin-bottom transition-all duration-1000 ease-out ${
                 photoVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
               }`}
-              style={{ isolation: "isolate" }}
             >
-              {/* Soft colour glow behind the photo */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0"
-                style={{
-                  zIndex: -1,
-                  background:
-                    "radial-gradient(circle at 50% 40%, rgba(96,165,250,0.45) 0%, rgba(244,114,182,0.30) 40%, transparent 70%)",
-                  filter: "blur(30px)",
-                }}
-              />
               <img
                 ref={photoRef}
                 src="/images/carlo-photo.png"
