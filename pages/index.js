@@ -14,17 +14,32 @@ import Cursor from "../components/Cursor";
 // Local Data
 import data from "../data/portfolio.json";
 
-// Render **marked** keywords as highlighted spans
+// Render **keywords** as blue text and [text](url) as blue links
 const renderHighlighted = (text = "") =>
-  text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-    part.startsWith("**") && part.endsWith("**") && part.length > 4 ? (
-      <span key={i} className="text-blue-500 dark:text-blue-400">
-        {part.slice(2, -2)}
-      </span>
-    ) : (
-      part
-    )
-  );
+  text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+      return (
+        <span key={i} className="text-blue-500 dark:text-blue-400">
+          {part.slice(2, -2)}
+        </span>
+      );
+    }
+    const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (link) {
+      return (
+        <a
+          key={i}
+          href={link[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 dark:text-blue-400 underline underline-offset-4 hover:opacity-70 transition-opacity"
+        >
+          {link[1]}
+        </a>
+      );
+    }
+    return part;
+  });
 
 export default function Home() {
   // Ref
@@ -79,36 +94,47 @@ export default function Home() {
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
         />
-        <div className="laptop:mt-20 mt-10">
-          <div className="mt-5">
-            <h1
-              ref={textOne}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
-            >
-              {data.headerTaglineOne}
-            </h1>
-            <h1
-              ref={textTwo}
-              className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineTwo}
-            </h1>
-            <h1
-              ref={textThree}
-              className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineThree}
-            </h1>
-            <h1
-              ref={textFour}
-              className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineFour}
-            </h1>
+        <div className="laptop:mt-20 mt-10 flex flex-col laptop:flex-row laptop:items-center gap-6 laptop:gap-10">
+          <div className="w-full laptop:w-3/5">
+            <div className="mt-5">
+              <h1
+                ref={textOne}
+                className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full"
+              >
+                {data.headerTaglineOne}
+              </h1>
+              <h1
+                ref={textTwo}
+                className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-full"
+              >
+                {data.headerTaglineTwo}
+              </h1>
+              <h1
+                ref={textThree}
+                className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-full"
+              >
+                {data.headerTaglineThree}
+              </h1>
+              <h1
+                ref={textFour}
+                className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-5xl p-1 tablet:p-2 text-bold w-full"
+              >
+                {data.headerTaglineFour}
+              </h1>
+            </div>
+
+            <Socials className="mt-2 laptop:mt-5" />
           </div>
 
-          <Socials className="mt-2 laptop:mt-5" />
+          <div className="order-first laptop:order-last w-full laptop:w-2/5 flex justify-center laptop:justify-end">
+            <img
+              src="/images/carlo-photo.png"
+              alt="Carlo Leonardi"
+              className="w-48 tablet:w-64 laptop:w-full max-w-md h-auto"
+            />
+          </div>
         </div>
+
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
